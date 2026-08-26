@@ -3,113 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BetAndYou VIP Intelligence Artificielle - Congo Kinshasa</title>
+    <title>BetAndYou VIP AI - Congo Kinshasa</title>
     <style>
+        :root {
+            --bg-color: #080b11;
+            --card-bg: #111827;
+            --border-color: #1f2937;
+            --accent: #f59e0b;
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+            --success: #34d399;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #0b0f19;
-            color: #ffffff;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
         }
 
-        /* HEADER */
         header {
             width: 100%;
-            background-color: #131b2e;
-            padding: 12px 20px;
+            background-color: #0d1322;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #1e293b;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .logo-area {
+        .logo-box {
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .logo-badge {
+        .badge {
             background: linear-gradient(135deg, #f59e0b, #d97706);
-            padding: 6px 10px;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 0.85rem;
             color: #000;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 0.8rem;
         }
 
-        .brand-title {
+        .title-brand {
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 1.1rem;
             letter-spacing: 0.5px;
         }
 
-        .top-balance {
-            background-color: #1e293b;
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 0.9rem;
+        .balance-pill {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 8px 14px;
+            border-radius: 8px;
+            color: var(--accent);
             font-weight: 600;
-            color: #f59e0b;
-            border: 1px solid #334155;
+            font-size: 0.9rem;
             cursor: pointer;
         }
 
-        /* CONTAINER */
-        .main-container {
+        .container {
             width: 100%;
-            max-width: 900px;
+            max-width: 480px;
             padding: 20px;
+            flex: 1;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            flex: 1;
             justify-content: center;
         }
 
         /* AUTH SCREEN */
-        #auth-screen {
-            background: #111827;
-            border: 1px solid #1f2937;
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 40px 30px;
+            padding: 30px 20px;
             text-align: center;
-            max-width: 420px;
-            width: 100%;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
-        .auth-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        #auth-screen h2 {
-            font-size: 1.5rem;
+        .card h2 {
+            font-size: 1.4rem;
             margin-bottom: 10px;
         }
 
-        #auth-screen p {
-            color: #9ca3af;
+        .card p {
+            color: var(--text-muted);
             font-size: 0.9rem;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             line-height: 1.4;
         }
 
-        .pin-input {
+        .input-pin {
             width: 100%;
             background: #030712;
-            border: 2px solid #374151;
+            border: 2px solid var(--border-color);
             border-radius: 10px;
             padding: 14px;
             color: #fff;
@@ -118,14 +117,13 @@
             letter-spacing: 8px;
             margin-bottom: 20px;
             outline: none;
-            transition: border-color 0.2s;
         }
 
-        .pin-input:focus {
-            border-color: #f59e0b;
+        .input-pin:focus {
+            border-color: var(--accent);
         }
 
-        .btn-primary {
+        .btn {
             width: 100%;
             background: linear-gradient(135deg, #f59e0b, #d97706);
             color: #000;
@@ -138,422 +136,256 @@
             transition: opacity 0.2s;
         }
 
-        .btn-primary:hover {
-            opacity: 0.9;
-        }
+        .btn:hover { opacity: 0.9; }
 
-        /* DASHBOARD SCREEN */
-        #dashboard-screen {
-            display: none;
-            width: 100%;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        .ai-banner {
-            background: linear-gradient(135deg, #1e1b4b, #111827);
-            border: 1px solid #312e81;
-            border-radius: 12px;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .ai-banner-text h3 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: #818cf8;
-        }
-
-        .ai-banner-text p {
-            font-size: 0.8rem;
-            color: #9ca3af;
-        }
-
-        .accuracy-badge {
-            background: #064e3b;
-            color: #34d399;
-            border: 1px solid #065f46;
-            padding: 8px 14px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 1rem;
-            color: #9ca3af;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .games-grid {
+        /* DASHBOARD */
+        #dashboard { display: none; width: 100%; }
+        
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 15px;
-            width: 100%;
+            margin-top: 15px;
         }
 
-        .game-card {
-            background: #111827;
-            border: 1px solid #1f2937;
+        .game-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 20px;
+            padding: 20px 10px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.2s;
-            position: relative;
+            transition: 0.2s;
         }
 
-        .game-card:hover {
-            border-color: #f59e0b;
-            transform: translateY(-3px);
+        .game-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
         }
 
-        .game-icon {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
+        .game-emoji { font-size: 2.2rem; margin-bottom: 8px; }
+        .game-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+        .game-sub { font-size: 0.75rem; color: var(--success); }
 
-        .game-name {
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 5px;
-        }
+        /* GAMEPLAY */
+        #gameplay { display: none; width: 100%; }
 
-        .game-status {
-            font-size: 0.75rem;
-            color: #34d399;
-        }
-
-        /* GAMEPLAY SCREEN */
-        #gameplay-screen {
-            display: none;
-            width: 100%;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        .gameplay-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .btn-back {
-            background: #1f2937;
-            color: #d1d5db;
-            border: none;
-            padding: 8px 14px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.85rem;
-        }
-
-        .btn-back:hover {
-            background: #374151;
-        }
-
-        .signal-box {
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 12px;
-            padding: 30px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .signal-multiplier {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #34d399;
-            margin: 15px 0;
-            text-shadow: 0 0 20px rgba(52, 211, 153, 0.3);
-        }
-
-        .signal-target {
-            background: rgba(52, 211, 153, 0.1);
-            color: #34d399;
-            padding: 6px 12px;
-            border-radius: 20px;
-            display: inline-block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid rgba(52, 211, 153, 0.3);
-        }
-
-        .bet-advice {
-            background: #1f2937;
-            border-radius: 10px;
-            padding: 15px;
+        .top-nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
         }
 
-        .btn-action {
-            width: 100%;
-            background: linear-gradient(135deg, #0ea5e9, #0284c7);
-            color: white;
-            font-weight: 700;
-            padding: 16px;
+        .back-btn {
+            background: var(--border-color);
+            color: #fff;
             border: none;
-            border-radius: 10px;
-            font-size: 1rem;
+            padding: 8px 12px;
+            border-radius: 6px;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+            font-size: 0.85rem;
         }
 
-        .btn-action:hover {
-            opacity: 0.9;
-        }
-
-        /* MODAL DEPOSIT / PROMO */
-        #depositModal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            padding: 20px;
-        }
-
-        .modal-content {
-            background: #111827;
-            border: 1px solid #374151;
+        .signal-display {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 30px;
-            max-width: 400px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .multiplier-val {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: var(--success);
+            margin: 15px 0;
+            text-shadow: 0 0 15px rgba(52,211,153,0.3);
+        }
+
+        .status-tag {
+            background: rgba(52,211,153,0.1);
+            color: var(--success);
+            border: 1px solid rgba(52,211,153,0.3);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* MODAL */
+        #modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            padding: 20px;
+        }
+
+        .modal-body {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 380px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 0.3s ease-in-out;
         }
 
-        .modal-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #f87171;
-            margin-bottom: 10px;
-        }
-
-        .modal-desc {
-            font-size: 0.9rem;
-            color: #9ca3af;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
-
-        .promo-box {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px dashed #f59e0b;
+        .promo-highlight {
+            background: #030712;
+            border: 1px dashed var(--accent);
+            padding: 12px;
             border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-        }
-
-        .promo-code {
-            color: #fef08a;
+            margin: 15px 0;
             font-weight: bold;
+            color: #fef08a;
             letter-spacing: 1px;
         }
 
-        .btn-deposit {
+        .btn-link {
             background: linear-gradient(135deg, #f59e0b, #d97706);
             color: #000;
+            text-decoration: none;
             font-weight: 700;
             padding: 14px;
-            border: none;
             border-radius: 10px;
-            font-size: 1rem;
-            cursor: pointer;
-            text-decoration: none;
             display: block;
-            width: 100%;
-        }
-
-        .btn-deposit:hover {
-            opacity: 0.9;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-area">
-            <div class="logo-badge">👑 VIP</div>
-            <div class="brand-title">BETANDYOU CONGO</div>
+        <div class="logo-box">
+            <span class="badge">VIP</span>
+            <span class="title-brand">BETANDYOU RDC</span>
         </div>
-        <div class="top-balance" id="userBalance" onclick="openDepositModal()">50 000 CDF</div>
+        <div class="balance-pill" onclick="openModal()">50 000 CDF</div>
     </header>
 
-    <div class="main-container">
-
-        <!-- 1. ЭКРАН АВТОРИЗАЦИИ (PIN) -->
-        <div id="auth-screen">
-            <div class="auth-icon">🔐</div>
-            <h2>Accès VIP BetAndYou</h2>
-            <p>Entrez votre code d'accès personnel pour débloquer les algorithmes au Congo (Kinshasa).</p>
-            <input type="password" id="pinInput" class="pin-input" placeholder="••••" maxlength="4">
-            <button class="btn-primary" onclick="checkPin()">Connexion Sécurisée</button>
+    <div class="container">
+        <!-- AUTH -->
+        <div id="auth-screen" class="card">
+            <div style="font-size: 2.5rem; margin-bottom: 10px;">🛡️</div>
+            <h2>Accès Sécurisé IA</h2>
+            <p>Entrez votre code d'accès pour déchiffrer les algorithmes de Kinshasa.</p>
+            <input type="password" id="pin" class="input-pin" placeholder="••••" maxlength="4">
+            <button class="btn" onclick="login()">Se Connecter</button>
         </div>
 
-        <!-- 2. ГЛАВНОЕ МЕНЮ (ВЫБОР ИГР) -->
-        <div id="dashboard-screen">
-            <div class="ai-banner">
-                <div class="ai-banner-text">
-                    <h3>Intelligence Artificielle v4.8</h3>
-                    <p>Synchronisation en temps réel avec les serveurs Congo.</p>
+        <!-- DASHBOARD -->
+        <div id="dashboard">
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">Sélectionnez un jeu</p>
+            <div class="grid">
+                <div class="game-item" onclick="selectGame('Aviator')">
+                    <div class="game-emoji">✈️</div>
+                    <div class="game-title">Aviator</div>
+                    <div class="game-sub">● Actيف</div>
                 </div>
-                <div class="accuracy-badge">
-                    98.6%<br><span style="font-size:0.65rem; font-weight:normal;">TAUX DE RÉUSSITE</span>
+                <div class="game-item" onclick="selectGame('Apple of Fortune')">
+                    <div class="game-emoji">🍎</div>
+                    <div class="game-title">Apple Fortune</div>
+                    <div class="game-sub">● 10 Étages</div>
                 </div>
-            </div>
-
-            <div class="section-title">Sélectionnez votre jeu</div>
-
-            <div class="games-grid">
-                <div class="game-card" onclick="openGame('Aviator')">
-                    <div class="game-icon">✈️</div>
-                    <div class="game-name">Aviator</div>
-                    <div class="game-status">● Trajectoire Exacte</div>
+                <div class="game-item" onclick="selectGame('Mines')">
+                    <div class="game-emoji">💣</div>
+                    <div class="game-title">Mines 5x5</div>
+                    <div class="game-sub">● 5 Diamants</div>
                 </div>
-                <div class="game-card" onclick="openGame('Apple of Fortune')">
-                    <div class="game-icon">🍎</div>
-                    <div class="game-name">Apple of Fortune</div>
-                    <div class="game-status">● Chemin 10 Étages</div>
-                </div>
-                <div class="game-card" onclick="openGame('Mines 5x5')">
-                    <div class="game-icon">💣</div>
-                    <div class="game-name">Mines 5x5</div>
-                    <div class="game-status">● 5 Diamants Sürs</div>
-                </div>
-                <div class="game-card" onclick="openGame('Penalty Shootout')">
-                    <div class="game-icon">⚽</div>
-                    <div class="game-name">Penalty</div>
-                    <div class="game-status">● Cible Gardien</div>
+                <div class="game-item" onclick="selectGame('Penalty')">
+                    <div class="game-emoji">⚽</div>
+                    <div class="game-title">Penalty</div>
+                    <div class="game-sub">● But Sûr</div>
                 </div>
             </div>
         </div>
 
-        <!-- 3. ЭКРАН ГЕНЕРАЦИИ СИГНАЛОВ -->
-        <div id="gameplay-screen">
-            <div class="gameplay-header">
-                <button class="btn-back" onclick="goBack()">← Retour aux Jeux</button>
-                <div id="currentGameTitle" style="font-weight: 600; color: #f59e0b;">Aviator Congo</div>
+        <!-- GAMEPLAY -->
+        <div id="gameplay">
+            <div class="top-nav">
+                <button class="back-btn" onclick="goHome()">← Retour</button>
+                <span id="currentGameLabel" style="font-weight: 600; color: var(--accent);">Aviator</span>
             </div>
 
-            <div class="signal-box">
-                <div style="font-size: 0.85rem; color: #9ca3af;">PROCHAIN SIGNAL CALCULÉ</div>
-                <div class="signal-multiplier" id="signalValue">1.61x</div>
-                <div class="signal-target">🎯 CIBLE VERROUILLÉE</div>
+            <div class="signal-display">
+                <div style="font-size: 0.8rem; color: var(--text-muted);">PROCHAIN MULTIPLICATEUR</div>
+                <div class="multiplier-val" id="signalVal">1.75x</div>
+                <div class="status-tag">🎯 PRÉDICTION SYNCHRONISÉE</div>
             </div>
 
-            <div class="bet-advice">
-                <div>
-                    <div style="font-size: 0.8rem; color: #9ca3af;">Mise conseillée (1/10)</div>
-                    <div style="font-size: 1.1rem; font-weight: 700; color: #f59e0b;" id="recommendedBet">1 000 CDF</div>
-                </div>
-                <div style="text-align: right;">
-                    <div style="font-size: 0.8rem; color: #9ca3af;">Capacité de Sécurité</div>
-                    <div style="font-size: 1.1rem; font-weight: 700; color: #34d399;">10 Signaux</div>
-                </div>
-            </div>
-
-            <button class="btn-action" onclick="requestNextSignal()">⚡ OBTENIR LE SIGNAL SUIVANT</button>
+            <button class="btn" onclick="nextSignal()">GÉNÉRER UN SIGNAL</button>
         </div>
-
     </div>
 
-    <!-- МОДАЛЬНОЕ ОКНО ДЕПОЗИТА С РЕФЕРАЛКОЙ И ПРОМОКОДОМ -->
-    <div id="depositModal">
-        <div class="modal-content">
-            <div class="modal-title">⚠️ Dépôt Requis</div>
-            <div class="modal-desc">
-                Votre solde est insuffisant pour continuer à recevoir les signaux de l'IA. Veuillez effectuer un dépôt pour activer votre compte.
-            </div>
-            <div class="promo-box">
-                Code Promo : <span class="promo-code">ALP882</span>
-            </div>
-            <a href="https://refpa69905.com/L?tag=d_5160092m_64375c_tim&site=5160092&ad=64375&r=registration?bonus=casino" target="_blank" class="btn-deposit">Déposer Maintenant</a>
-            <button onclick="closeDepositModal()" style="background:none; border:none; color:#9ca3af; margin-top:15px; cursor:pointer; font-size:0.85rem;">Fermer</button>
+    <!-- MODAL -->
+    <div id="modal">
+        <div class="modal-body">
+            <h3 style="color: #f87171; margin-bottom: 10px;">⚠️ Synchronisation bloquée</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">
+                Votre quota de signaux gratuits est épuisé. Effectuez un dépôt pour continuer. N'oubliez pas d'utiliser le code promo :
+            </p>
+            <div class="promo-highlight">ALP882</div>
+            <a href="https://refpa69905.com/L?tag=d_5160092m_64375c_tim&site=5160092&ad=64375&r=registration?bonus=casino" target="_blank" class="btn-link">Déposer et Activer</a>
+            <button onclick="closeModal()" style="background: none; border: none; color: var(--text-muted); margin-top: 15px; cursor: pointer; font-size: 0.85rem;">Fermer</button>
         </div>
     </div>
 
     <script>
-        let clickCount = 0;
+        let clicks = 0;
 
-        function checkPin() {
-            const pin = document.getElementById('pinInput').value;
-            if(pin.length > 0) {
+        function login() {
+            const val = document.getElementById('pin').value;
+            if(val.length > 0) {
                 document.getElementById('auth-screen').style.display = 'none';
-                document.getElementById('dashboard-screen').style.display = 'block';
+                document.getElementById('dashboard').style.display = 'block';
             } else {
-                alert('Veuillez entrer le code PIN !');
+                alert('Entrez le code PIN !');
             }
         }
 
-        function openGame(gameName) {
-            document.getElementById('dashboard-screen').style.display = 'none';
-            document.getElementById('gameplay-screen').style.display = 'block';
-            document.getElementById('currentGameTitle').textContent = gameName + ' Congo';
-            clickCount = 0;
-            generateSignal();
+        function selectGame(name) {
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('gameplay').style.display = 'block';
+            document.getElementById('currentGameLabel').textContent = name;
+            clicks = 0;
+            updateSignal();
         }
 
-        function goBack() {
-            document.getElementById('gameplay-screen').style.display = 'none';
-            document.getElementById('dashboard-screen').style.display = 'block';
+        function goHome() {
+            document.getElementById('gameplay').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
         }
 
-        function requestNextSignal() {
-            clickCount++;
-            if (clickCount >= 3) {
-                openDepositModal();
-                clickCount = 0;
+        function nextSignal() {
+            clicks++;
+            if(clicks >= 3) {
+                openModal();
+                clicks = 0;
                 return;
             }
-            generateSignal();
+            updateSignal();
         }
 
-        function generateSignal() {
-            const multipliers = ['1.24x', '1.61x', '2.05x', '3.42x', '1.15x', '5.10x', '1.88x', '4.30x'];
-            const randomMultiplier = multipliers[Math.floor(Math.random() * multipliers.length)];
-            
-            const signalElem = document.getElementById('signalValue');
-            signalElem.style.opacity = '0';
-            signalElem.textContent = 'Calcul...';
-            
+        function updateSignal() {
+            const list = ['1.35x', '2.10x', '1.64x', '4.50x', '1.20x', '3.12x'];
+            const item = list[Math.floor(Math.random() * list.length)];
+            const elem = document.getElementById('signalVal');
+            elem.style.opacity = '0';
             setTimeout(() => {
-                signalElem.textContent = randomMultiplier;
-                signalElem.style.opacity = '1';
-            }, 300);
+                elem.textContent = item;
+                elem.style.opacity = '1';
+            }, 200);
         }
 
-        function openDepositModal() {
-            document.getElementById('depositModal').style.display = 'flex';
-        }
-
-        function closeDepositModal() {
-            document.getElementById('depositModal').style.display = 'none';
-        }
+        function openModal() { document.getElementById('modal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('modal').style.display = 'none'; }
     </script>
 </body>
 </html>
