@@ -7,16 +7,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-deep: #050b14;
-            --bg-card: rgba(18, 30, 49, 0.75);
-            --bg-card-hover: rgba(26, 43, 70, 0.85);
+            --bg-deep: #030712;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --bg-card-hover: rgba(30, 41, 59, 0.85);
             --border-clr: rgba(255, 255, 255, 0.08);
-            --border-gold: rgba(255, 215, 0, 0.3);
-            --accent-green: #00f5d4;
-            --accent-gold: #ffb703;
+            --border-gold: rgba(234, 179, 8, 0.35);
+            --accent-green: #10b981;
+            --accent-gold: #f59e0b;
             --text-main: #ffffff;
             --text-muted: #94a3b8;
-            --danger: #ff0054;
+            --danger: #ef4444;
         }
 
         * {
@@ -35,25 +35,29 @@
             align-items: center;
             overflow-x: hidden;
             position: relative;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(245, 158, 11, 0.07) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.07) 0%, transparent 40%),
+                linear-gradient(to bottom, #030712, #0b0f19);
         }
 
+        /* Дополнительный премиальный паттерн сетки */
         body::before {
             content: '';
             position: absolute;
-            top: -20vh;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80vw;
-            height: 60vh;
-            background: radial-gradient(circle, rgba(0, 245, 212, 0.12) 0%, rgba(255, 183, 3, 0.06) 40%, transparent 70%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
             z-index: -1;
-            filter: blur(60px);
             pointer-events: none;
         }
 
         header {
             width: 100%;
-            background: rgba(5, 11, 20, 0.85);
+            background: rgba(3, 7, 18, 0.85);
             backdrop-filter: blur(20px);
             padding: 18px 32px;
             display: flex;
@@ -73,14 +77,14 @@
         }
 
         .vip-badge {
-            background: linear-gradient(135deg, #ffb703, #fb8500);
+            background: linear-gradient(135deg, #f59e0b, #d97706);
             color: #000;
             padding: 6px 12px;
             border-radius: 8px;
             font-weight: 800;
             font-size: 0.75rem;
             letter-spacing: 1px;
-            box-shadow: 0 0 20px rgba(255, 183, 3, 0.4);
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
         }
 
         .brand-name {
@@ -92,7 +96,7 @@
         }
         .brand-name span {
             color: var(--accent-green);
-            text-shadow: 0 0 15px rgba(0, 245, 212, 0.5);
+            text-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
         }
 
         .header-right {
@@ -102,8 +106,8 @@
         }
 
         .ai-status-pill {
-            background: rgba(0, 245, 212, 0.08);
-            border: 1px solid rgba(0, 245, 212, 0.25);
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.25);
             padding: 8px 14px;
             border-radius: 12px;
             font-size: 0.8rem;
@@ -125,8 +129,8 @@
         }
 
         .user-balance {
-            background: rgba(0, 245, 212, 0.1);
-            border: 1px solid rgba(0, 245, 212, 0.3);
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
             padding: 10px 18px;
             border-radius: 12px;
             color: var(--accent-gold);
@@ -134,13 +138,13 @@
             font-size: 0.95rem;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 0 20px rgba(0, 245, 212, 0.1);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
             display: flex;
             align-items: center;
             gap: 8px;
         }
         .user-balance:hover {
-            background: rgba(0, 245, 212, 0.2);
+            background: rgba(16, 185, 129, 0.2);
             border-color: var(--accent-green);
             transform: translateY(-2px);
         }
@@ -194,7 +198,7 @@
             font-size: 0.8rem;
             color: var(--text-muted);
             padding: 5px 10px;
-            background: rgba(5, 11, 20, 0.5);
+            background: rgba(3, 7, 18, 0.5);
             border-radius: 8px;
             border: 1px solid rgba(255,255,255,0.03);
             transition: all 0.4s ease-in-out;
@@ -210,7 +214,7 @@
         }
 
         .winner-item span { color: var(--text-main); font-weight: 700; }
-        .winner-item b { color: var(--accent-green); font-weight: 800; text-shadow: 0 0 10px rgba(0, 245, 212, 0.3); }
+        .winner-item b { color: var(--accent-green); font-weight: 800; text-shadow: 0 0 10px rgba(16, 185, 129, 0.3); }
 
         #toast-container {
             position: fixed;
@@ -223,12 +227,12 @@
             pointer-events: none;
         }
         .toast-card {
-            background: rgba(18, 30, 49, 0.98);
+            background: rgba(15, 23, 42, 0.98);
             backdrop-filter: blur(20px);
             border: 1px solid var(--accent-green);
             border-radius: 14px;
             padding: 14px 20px;
-            box-shadow: 0 15px 40px rgba(0,245,212,0.35);
+            box-shadow: 0 15px 40px rgba(16,185,129,0.35);
             display: flex;
             align-items: center;
             gap: 14px;
@@ -263,7 +267,7 @@
 
         .pin-input {
             width: 100%;
-            background: rgba(5, 11, 20, 0.6);
+            background: rgba(3, 7, 18, 0.6);
             border: 2px solid var(--border-clr);
             border-radius: 16px;
             padding: 18px;
@@ -277,13 +281,13 @@
         }
         .pin-input:focus {
             border-color: var(--accent-green);
-            box-shadow: 0 0 25px rgba(0, 245, 212, 0.25);
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.25);
         }
 
         .main-btn {
             width: 100%;
-            background: linear-gradient(135deg, var(--accent-green), #00b4d8);
-            color: #050b14;
+            background: linear-gradient(135deg, var(--accent-green), #059669);
+            color: #030712;
             font-weight: 900;
             padding: 18px;
             border: none;
@@ -291,13 +295,13 @@
             font-size: 1.1rem;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(0, 245, 212, 0.3);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         .main-btn:hover { 
             transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(0, 245, 212, 0.5); 
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5); 
         }
 
         #dashboard { display: none; width: 100%; }
@@ -341,8 +345,8 @@
             font-size: 0.75rem; 
             color: var(--accent-green); 
             font-weight: 700; 
-            background: rgba(0, 245, 212, 0.1); 
-            border: 1px solid rgba(0, 245, 212, 0.2);
+            background: rgba(16, 185, 129, 0.1); 
+            border: 1px solid rgba(16, 185, 129, 0.2);
             padding: 5px 12px; 
             border-radius: 30px; 
             display: inline-block; 
@@ -388,7 +392,7 @@
         .progress-track {
             width: 100%;
             height: 6px;
-            background: rgba(5, 11, 20, 0.8);
+            background: rgba(3, 7, 18, 0.8);
             border-radius: 3px;
             overflow: hidden;
         }
@@ -427,7 +431,7 @@
         }
         .mine-cell {
             aspect-ratio: 1;
-            background: rgba(5, 11, 20, 0.6);
+            background: rgba(3, 7, 18, 0.6);
             border: 1px solid var(--border-clr);
             border-radius: 12px;
             display: flex;
@@ -436,7 +440,7 @@
             font-size: 1.3rem;
         }
         .mine-cell.safe {
-            background: rgba(0, 245, 212, 0.2);
+            background: rgba(16, 185, 129, 0.2);
             border-color: var(--accent-green);
         }
 
@@ -448,11 +452,11 @@
             margin: 0 auto;
         }
         .apple-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
-        .apple-cell { background: rgba(5, 11, 20, 0.6); border: 1px solid var(--border-clr); border-radius: 10px; padding: 12px 0; text-align: center; opacity: 0.35; }
-        .apple-cell.highlight { background: rgba(0, 245, 212, 0.25); border-color: var(--accent-green); opacity: 1; }
+        .apple-cell { background: rgba(3, 7, 18, 0.6); border: 1px solid var(--border-clr); border-radius: 10px; padding: 12px 0; text-align: center; opacity: 0.35; }
+        .apple-cell.highlight { background: rgba(16, 185, 129, 0.25); border-color: var(--accent-green); opacity: 1; }
 
         .penalty-field {
-            background: linear-gradient(135deg, #030f1f, #072b42);
+            background: linear-gradient(135deg, #050b14, #0f172a);
             border: 2px solid var(--border-gold);
             border-radius: 16px;
             height: 180px;
@@ -467,30 +471,30 @@
         .goal-target {
             width: 55px; height: 55px; border: 2px dashed rgba(255,255,255,0.9); border-radius: 50%;
             position: absolute; display: flex; align-items: center; justify-content: center; font-size: 1.6rem;
-            background: rgba(0, 245, 212, 0.15);
+            background: rgba(16, 185, 129, 0.15);
             transition: all 0.3s ease;
         }
 
         .sync-badge {
-            background: rgba(255, 183, 3, 0.1); color: var(--accent-gold); border: 1px solid rgba(255, 183, 3, 0.3);
+            background: rgba(245, 158, 11, 0.1); color: var(--accent-gold); border: 1px solid rgba(245, 158, 11, 0.3);
             padding: 8px 16px; border-radius: 30px; font-size: 0.75rem; font-weight: 800; display: inline-block; margin-top: 20px;
         }
 
         .scanning-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(5, 11, 20, 0.85); backdrop-filter: blur(10px);
+            background: rgba(3, 7, 18, 0.85); backdrop-filter: blur(10px);
             display: none; flex-direction: column; align-items: center; justify-content: center;
             border-radius: 24px; z-index: 10;
         }
         .scanner-ring {
-            width: 50px; height: 50px; border: 3px solid rgba(0,245,212,0.2); border-top-color: var(--accent-green);
+            width: 50px; height: 50px; border: 3px solid rgba(16,185,129,0.2); border-top-color: var(--accent-green);
             border-radius: 50%; animation: spinRing 0.8s linear infinite; margin-bottom: 12px;
         }
         @keyframes spinRing { to { transform: rotate(360deg); } }
 
         #modal-overlay {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(5, 11, 20, 0.85); backdrop-filter: blur(20px);
+            background: rgba(3, 7, 18, 0.85); backdrop-filter: blur(20px);
             justify-content: center; align-items: center; z-index: 10000; padding: 20px;
         }
         .modal-content {
@@ -499,11 +503,11 @@
         .modal-title { color: var(--danger); font-size: 1.35rem; font-weight: 900; margin-bottom: 12px; }
         .modal-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 25px; }
         .promo-highlight {
-            background: rgba(255, 183, 3, 0.15); border: 1px dashed var(--accent-gold); color: var(--accent-gold);
+            background: rgba(245, 158, 11, 0.15); border: 1px dashed var(--accent-gold); color: var(--accent-gold);
             padding: 8px; border-radius: 8px; font-weight: 800; margin: 10px 0; font-size: 1.1rem; letter-spacing: 1px;
         }
         .action-link {
-            background: linear-gradient(135deg, var(--accent-green), #00b4d8); color: #050b14; text-decoration: none; font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-green), #059669); color: #030712; text-decoration: none; font-weight: 900;
             padding: 16px; border-radius: 14px; display: block; font-size: 1rem; text-transform: uppercase; margin-top: 15px;
         }
         .close-modal-btn { background: none; border: none; color: var(--text-muted); margin-top: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 700; }
@@ -533,7 +537,6 @@
             <div class="ticker-list" id="tickerList"></div>
         </div>
 
-        <!-- AUTH STEP -->
         <div id="auth-screen" class="card">
             <div style="font-size: 2.8rem; margin-bottom: 15px;">🇨🇩</div>
             <h2>Vérification Sécurisée</h2>
@@ -542,7 +545,6 @@
             <button class="main-btn" onclick="playBeep(400, 0.08); login();">Se Connecter</button>
         </div>
 
-        <!-- DASHBOARD -->
         <div id="dashboard">
             <div class="section-title">⚡ Choisissez un jeu & Stratégie IA</div>
             <div class="games-grid">
@@ -569,7 +571,6 @@
             </div>
         </div>
 
-        <!-- GAMEPLAY SCREEN -->
         <div id="gameplay">
             <div class="navigation-top">
                 <button class="back-btn" onclick="playBeep(350, 0.05); goHome();">← Menu des Jeux</button>
@@ -599,10 +600,8 @@
         </div>
     </div>
 
-    <!-- TOASTS -->
     <div id="toast-container"></div>
 
-    <!-- MODAL -->
     <div id="modal-overlay">
         <div class="modal-content">
             <div class="modal-title">⚠️ Limite de Synchronisation</div>
@@ -610,7 +609,7 @@
                 Votre solde d'essai est épuisé. Pour débloquer les signaux illimités de Betandyou RDC, inscrivez-vous ou déposez avec le code promo :
                 <div class="promo-highlight">ALP882</div>
             </div>
-            <a href="https://sp1nwin.com/rcyQnv" target="_blank" class="action-link">Activer sur Betandyou</a>
+            <a href="https://refpa69905.com/L?tag=d_5160092m_64375c_tim&site=5160092&ad=64375&r=registration?bonus=casino" target="_blank" class="action-link">Activer sur Betandyou</a>
             <br>
             <button class="close-modal-btn" onclick="playBeep(300, 0.04); closeModal();">Fermer</button>
         </div>
@@ -858,7 +857,7 @@
             for(let r=0; r<5; r++) {
                 for(let c=0; c<5; c++) {
                     const cell = document.getElementById(`apple-${r}-${c}`);
-                    if(cell) cell.classList.remove('highlight');
+                    if(cell) cell.cellList?.remove('highlight') || cell.classList.remove('highlight');
                 }
                 let randomCol = Math.floor(Math.random() * 5);
                 const goodCell = document.getElementById(`apple-${r}-${randomCol}`);
