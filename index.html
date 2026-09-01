@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>BETANDYOU VIP Predictor - Türkiye</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>BETANDYOU VIP Predictor - RDC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-deep: #060913;
-            --bg-card: rgba(13, 20, 38, 0.9);
-            --border-gold: rgba(234, 179, 8, 0.35);
+            --bg-card: rgba(13, 20, 38, 0.85);
+            --bg-card-hover: rgba(22, 33, 61, 0.95);
+            --border-clr: rgba(234, 179, 8, 0.15);
+            --border-gold: rgba(234, 179, 8, 0.4);
             --accent-gold: #f59e0b;
             --text-main: #ffffff;
             --text-muted: #94a3b8;
@@ -24,6 +26,7 @@
             -webkit-tap-highlight-color: transparent;
         }
 
+        /* Полная гарантия изменения фона и видимости для мобильных устройств */
         html, body {
             background-color: #060913 !important;
             color: var(--text-main);
@@ -38,19 +41,18 @@
 
         body {
             background-image: 
-                radial-gradient(circle at 20% 15%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 85%, rgba(30, 58, 138, 0.3) 0%, transparent 60%),
+                radial-gradient(circle at 20% 15%, rgba(245, 158, 11, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 85%, rgba(30, 58, 138, 0.4) 0%, transparent 60%),
                 linear-gradient(135deg, #060913 0%, #0c1427 50%, #03050a 100%) !important;
             background-attachment: fixed !important;
-            padding-bottom: 30px;
         }
 
         header {
             width: 100%;
             background: rgba(6, 9, 19, 0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 10px 14px;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -58,121 +60,123 @@
             position: sticky;
             top: 0;
             z-index: 999;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .vip-badge {
             background: linear-gradient(135deg, #f59e0b, #d97706);
             color: #000;
-            padding: 3px 6px;
-            border-radius: 4px;
+            padding: 5px 10px;
+            border-radius: 6px;
             font-weight: 800;
-            font-size: 0.6rem;
-            letter-spacing: 0.5px;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
         }
 
         .brand-name {
-            font-weight: 800;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
+            font-weight: 900;
+            font-size: 1.15rem;
+            letter-spacing: 1px;
             color: var(--text-main);
             text-transform: uppercase;
         }
         .brand-name span {
             color: var(--accent-gold);
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
         }
 
         .header-right {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 10px;
         }
 
         .ai-status-pill {
             background: rgba(245, 158, 11, 0.1);
             border: 1px solid rgba(245, 158, 11, 0.3);
-            padding: 4px 8px;
-            border-radius: 8px;
-            font-size: 0.65rem;
+            padding: 6px 10px;
+            border-radius: 10px;
+            font-size: 0.75rem;
             font-weight: 700;
             color: var(--accent-gold);
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 5px;
         }
         .pulse-dot {
-            width: 5px; height: 5px; background: var(--accent-gold); border-radius: 50%;
-            box-shadow: 0 0 6px var(--accent-gold);
+            width: 7px; height: 7px; background: var(--accent-gold); border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent-gold);
             animation: pulseAnim 1.5s infinite;
         }
         @keyframes pulseAnim {
             0% { transform: scale(0.95); opacity: 0.8; }
-            50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 10px var(--accent-gold); }
+            50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 12px var(--accent-gold); }
             100% { transform: scale(0.95); opacity: 0.8; }
         }
 
         .user-balance {
-            background: rgba(245, 158, 11, 0.12);
-            border: 1px solid rgba(245, 158, 11, 0.35);
-            padding: 5px 10px;
-            border-radius: 8px;
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            padding: 8px 14px;
+            border-radius: 10px;
             color: var(--accent-gold);
             font-weight: 800;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 4px;
-            white-space: nowrap;
+            gap: 6px;
+            z-index: 1000;
+            position: relative;
         }
 
         .container {
             width: 100%;
-            max-width: 480px;
-            padding: 12px;
+            max-width: 600px;
+            padding: 20px 15px;
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
             z-index: 2;
         }
 
         .winners-ticker-box {
             background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border: 1px solid var(--border-gold);
-            border-radius: 12px;
-            padding: 10px;
-            margin-bottom: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border-radius: 16px;
+            padding: 14px;
+            margin-bottom: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
         }
 
         .ticker-header {
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 0.7rem;
+            gap: 8px;
+            font-size: 0.8rem;
             font-weight: 800;
             color: var(--accent-gold);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-bottom: 1px solid rgba(234, 179, 8, 0.15);
-            padding-bottom: 5px;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-clr);
+            padding-bottom: 6px;
         }
 
         .ticker-list {
             display: flex;
             flex-direction: column;
-            gap: 5px;
-            max-height: 110px;
+            gap: 6px;
+            max-height: 240px;
             overflow: hidden;
         }
 
@@ -180,70 +184,70 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
-            padding: 5px 8px;
-            background: rgba(6, 9, 19, 0.7);
-            border-radius: 6px;
+            padding: 6px 10px;
+            background: rgba(6, 9, 19, 0.6);
+            border-radius: 8px;
             border: 1px solid rgba(245, 158, 11, 0.05);
         }
 
-        .winner-item span { color: var(--text-main); font-weight: 600; }
-        .winner-item b { color: var(--accent-gold); font-weight: 700; }
+        .winner-item span { color: var(--text-main); font-weight: 700; }
+        .winner-item b { color: var(--accent-gold); font-weight: 800; }
 
         #toast-container {
             position: fixed;
-            bottom: 15px;
-            right: 15px;
+            bottom: 20px;
+            right: 20px;
             z-index: 99999;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
             pointer-events: none;
         }
         .toast-card {
-            background: rgba(13, 20, 38, 0.95);
+            background: rgba(13, 20, 38, 0.98);
             border: 1px solid var(--accent-gold);
-            border-radius: 10px;
-            padding: 10px 12px;
-            box-shadow: 0 8px 20px rgba(245,158,11,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            box-shadow: 0 10px 30px rgba(245,158,11,0.3);
             display: flex;
             align-items: center;
-            gap: 10px;
-            max-width: 260px;
+            gap: 12px;
+            max-width: 300px;
             pointer-events: auto;
         }
-        .toast-icon { font-size: 1.1rem; }
-        .toast-text { font-size: 0.7rem; line-height: 1.2; color: var(--text-muted); }
-        .toast-text b { color: var(--accent-gold); font-weight: 700; }
+        .toast-icon { font-size: 1.3rem; }
+        .toast-text { font-size: 0.75rem; line-height: 1.3; color: var(--text-muted); }
+        .toast-text b { color: var(--accent-gold); font-weight: 800; }
 
         .card {
             background: var(--bg-card);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-gold);
-            border-radius: 16px;
-            padding: 20px 14px;
+            border-radius: 20px;
+            padding: 30px 20px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
             position: relative;
             z-index: 5;
         }
 
-        .card h2 { font-size: 1.2rem; margin-bottom: 6px; font-weight: 800; }
-        .card p { color: var(--text-muted); font-size: 0.8rem; margin-bottom: 18px; line-height: 1.4; }
+        .card h2 { font-size: 1.5rem; margin-bottom: 10px; font-weight: 800; }
+        .card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px; line-height: 1.5; }
 
         .pin-input {
             width: 100%;
             background: rgba(6, 9, 19, 0.8);
             border: 2px solid var(--border-gold);
-            border-radius: 12px;
-            padding: 12px;
+            border-radius: 14px;
+            padding: 15px;
             color: #fff;
-            font-size: 1.3rem;
+            font-size: 1.6rem;
             text-align: center;
-            letter-spacing: 10px;
-            margin-bottom: 15px;
+            letter-spacing: 14px;
+            margin-bottom: 20px;
             outline: none;
         }
 
@@ -251,58 +255,61 @@
             width: 100%;
             background: linear-gradient(135deg, var(--accent-gold), #d97706);
             color: #000;
-            font-weight: 800;
-            padding: 13px;
+            font-weight: 900;
+            padding: 16px;
             border: none;
-            border-radius: 12px;
-            font-size: 0.85rem;
+            border-radius: 14px;
+            font-size: 1rem;
             cursor: pointer;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+            z-index: 10;
+            position: relative;
         }
 
         #dashboard { display: none; width: 100%; z-index: 5; }
 
         .section-title {
             color: var(--accent-gold);
-            font-size: 0.75rem;
-            margin-bottom: 10px;
+            font-size: 0.8rem;
+            margin-bottom: 14px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             font-weight: 800;
         }
 
         .games-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            gap: 12px;
         }
 
         .game-card {
             background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border: 1px solid var(--border-gold);
-            border-radius: 14px;
-            padding: 16px 10px;
+            border-radius: 16px;
+            padding: 22px 12px;
             text-align: center;
             cursor: pointer;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            z-index: 10;
             position: relative;
         }
 
-        .game-icon { font-size: 2rem; margin-bottom: 6px; }
-        .game-name { font-weight: 800; font-size: 0.9rem; margin-bottom: 4px; color: #fff; }
+        .game-icon { font-size: 2.5rem; margin-bottom: 10px; }
+        .game-name { font-weight: 800; font-size: 1rem; margin-bottom: 6px; color: #fff; }
         
         .game-status { 
-            font-size: 0.65rem; 
+            font-size: 0.7rem; 
             color: var(--accent-gold); 
             font-weight: 700; 
             background: rgba(245, 158, 11, 0.1); 
             border: 1px solid rgba(245, 158, 11, 0.3);
-            padding: 3px 8px; 
-            border-radius: 12px; 
+            padding: 4px 10px; 
+            border-radius: 20px; 
             display: inline-block; 
         }
 
@@ -312,61 +319,65 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            z-index: 10;
+            position: relative;
         }
 
         .back-btn {
             background: var(--bg-card);
             color: var(--text-main);
             border: 1px solid var(--border-gold);
-            padding: 6px 10px;
-            border-radius: 8px;
+            padding: 8px 14px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 700;
+            z-index: 10;
+            position: relative;
         }
 
         .bonus-progress-box {
             background: var(--bg-card);
             border: 1px solid var(--border-gold);
-            border-radius: 10px;
-            padding: 8px 12px;
-            margin-bottom: 10px;
+            border-radius: 12px;
+            padding: 10px 14px;
+            margin-bottom: 12px;
         }
         .bonus-info {
             display: flex;
             justify-content: space-between;
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             font-weight: 800;
             color: var(--accent-gold);
-            margin-bottom: 4px;
+            margin-bottom: 5px;
             text-transform: uppercase;
         }
         .progress-track {
             width: 100%;
-            height: 4px;
+            height: 5px;
             background: rgba(6, 9, 19, 0.9);
-            border-radius: 2px;
+            border-radius: 3px;
             overflow: hidden;
         }
         .progress-fill {
             height: 100%;
             width: 0%;
             background: linear-gradient(90deg, var(--accent-gold), #fff);
-            transition: width 0.3s ease;
+            transition: width 0.4s ease;
         }
 
         .game-screen-box {
             background: var(--bg-card);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-gold);
-            border-radius: 16px;
-            padding: 18px 10px;
+            border-radius: 20px;
+            padding: 25px 15px;
             text-align: center;
-            margin-bottom: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            min-height: 160px;
+            margin-bottom: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            min-height: 200px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -374,56 +385,49 @@
             position: relative;
         }
 
-        .aviator-val { 
-            font-size: 2.4rem; 
-            font-weight: 800; 
-            color: var(--accent-gold); 
-            margin: 6px 0; 
-            text-shadow: 0 0 12px rgba(245,158,11,0.3); 
-            line-height: 1;
-        }
+        .aviator-val { font-size: 3.5rem; font-weight: 900; color: var(--accent-gold); margin: 10px 0; text-shadow: 0 0 15px rgba(245,158,11,0.4); }
 
         .mines-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 5px;
-            max-width: 230px;
+            gap: 8px;
+            max-width: 280px;
             margin: 0 auto;
         }
         .mine-cell {
             aspect-ratio: 1;
             background: rgba(6, 9, 19, 0.8);
             border: 1px solid var(--border-gold);
-            border-radius: 8px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
         }
         .mine-cell.safe {
             background: rgba(245, 158, 11, 0.25);
             border-color: var(--accent-gold);
-            box-shadow: 0 0 8px rgba(245,158,11,0.25);
+            box-shadow: 0 0 10px rgba(245,158,11,0.3);
         }
 
         .apple-rows {
             display: flex;
             flex-direction: column;
-            gap: 5px;
-            max-width: 220px;
+            gap: 8px;
+            max-width: 260px;
             margin: 0 auto;
         }
-        .apple-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
-        .apple-cell { background: rgba(6, 9, 19, 0.8); border: 1px solid var(--border-gold); border-radius: 6px; padding: 7px 0; text-align: center; opacity: 0.35; font-size: 0.8rem; }
-        .apple-cell.highlight { background: rgba(245, 158, 11, 0.3); border-color: var(--accent-gold); opacity: 1; box-shadow: 0 0 8px rgba(245,158,11,0.25); }
+        .apple-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+        .apple-cell { background: rgba(6, 9, 19, 0.8); border: 1px solid var(--border-gold); border-radius: 8px; padding: 10px 0; text-align: center; opacity: 0.35; }
+        .apple-cell.highlight { background: rgba(245, 158, 11, 0.3); border-color: var(--accent-gold); opacity: 1; box-shadow: 0 0 10px rgba(245,158,11,0.3); }
 
         .penalty-field {
             background: linear-gradient(135deg, #060913, #16223d);
-            border: 1px solid var(--border-gold);
-            border-radius: 12px;
-            height: 130px;
+            border: 2px solid var(--border-gold);
+            border-radius: 14px;
+            height: 160px;
             position: relative;
-            max-width: 250px;
+            max-width: 300px;
             width: 100%;
             margin: 0 auto;
             display: flex;
@@ -431,45 +435,51 @@
             justify-content: center;
         }
         .goal-target {
-            width: 38px; height: 38px; border: 2px dashed rgba(245,158,11,0.9); border-radius: 50%;
-            position: absolute; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+            width: 48px; height: 48px; border: 2px dashed rgba(245,158,11,0.9); border-radius: 50%;
+            position: absolute; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
             background: rgba(245, 158, 11, 0.2);
-            box-shadow: 0 0 8px rgba(245,158,11,0.25);
+            box-shadow: 0 0 10px rgba(245,158,11,0.3);
         }
 
         .sync-badge {
-            background: rgba(245, 158, 11, 0.1); color: var(--accent-gold); border: 1px solid rgba(245, 158, 11, 0.3);
-            padding: 4px 10px; border-radius: 16px; font-size: 0.65rem; font-weight: 800; display: inline-block; margin-top: 10px;
+            background: rgba(245, 158, 11, 0.1); color: var(--accent-gold); border: 1px solid rgba(245, 158, 11, 0.35);
+            padding: 6px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; display: inline-block; margin-top: 15px;
         }
 
         .scanning-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(6, 9, 19, 0.9); backdrop-filter: blur(6px);
+            background: rgba(6, 9, 19, 0.92); backdrop-filter: blur(8px);
             display: none; flex-direction: column; align-items: center; justify-content: center;
-            border-radius: 16px; z-index: 20;
+            border-radius: 20px; z-index: 20;
         }
         .scanner-ring {
-            width: 36px; height: 36px; border: 3px solid rgba(245,158,11,0.2); border-top-color: var(--accent-gold);
-            border-radius: 50%; animation: spinRing 0.8s linear infinite; margin-bottom: 8px;
+            width: 45px; height: 45px; border: 3px solid rgba(245,158,11,0.2); border-top-color: var(--accent-gold);
+            border-radius: 50%; animation: spinRing 0.8s linear infinite; margin-bottom: 10px;
         }
         @keyframes spinRing { to { transform: rotate(360deg); } }
 
         #modal-overlay {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(6, 9, 19, 0.88); backdrop-filter: blur(12px);
-            justify-content: center; align-items: center; z-index: 999999; padding: 16px;
+            background: rgba(6, 9, 19, 0.9); backdrop-filter: blur(15px);
+            justify-content: center; align-items: center; z-index: 999999; padding: 20px;
         }
         .modal-content {
-            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 22px 16px; max-width: 320px; width: 100%; text-align: center;
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 20px; padding: 30px 20px; max-width: 360px; width: 100%; text-align: center;
         }
-        .modal-title { color: var(--danger); font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
-        .modal-text { font-size: 0.75rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 16px; }
+        .modal-title { color: var(--danger); font-size: 1.25rem; font-weight: 900; margin-bottom: 10px; }
+        .modal-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 20px; }
+        .promo-highlight {
+            background: rgba(245, 158, 11, 0.15); border: 1px dashed var(--accent-gold); color: var(--accent-gold);
+            padding: 6px; border-radius: 6px; font-weight: 800; margin: 8px 0; font-size: 1rem; letter-spacing: 1px;
+        }
         .action-link {
-            background: linear-gradient(135deg, var(--accent-gold), #d97706); color: #000; text-decoration: none; font-weight: 800;
-            padding: 12px; border-radius: 10px; display: block; font-size: 0.85rem; text-transform: uppercase; margin-top: 10px;
-            box-shadow: 0 6px 15px rgba(245,158,11,0.25);
+            background: linear-gradient(135deg, var(--accent-gold), #d97706); color: #000; text-decoration: none; font-weight: 900;
+            padding: 14px; border-radius: 12px; display: block; font-size: 0.95rem; text-transform: uppercase; margin-top: 12px;
+            box-shadow: 0 8px 20px rgba(245,158,11,0.3);
+            z-index: 10;
+            position: relative;
         }
-        .close-modal-btn { background: none; border: none; color: var(--text-muted); margin-top: 12px; cursor: pointer; font-size: 0.75rem; font-weight: 700; }
+        .close-modal-btn { background: none; border: none; color: var(--text-muted); margin-top: 15px; cursor: pointer; font-size: 0.8rem; font-weight: 700; }
     </style>
 </head>
 <body>
@@ -484,65 +494,62 @@
                 <div class="pulse-dot"></div>
                 <span>AI: <strong id="accuracyRate">98.4</strong>%</span>
             </div>
-            <div class="user-balance" onclick="playBeep(600, 0.05); openModal();" id="balanceDisplay">₺ 5.000</div>
+            <div class="user-balance" onclick="playBeep(600, 0.05); openModal();" id="balanceDisplay">💰 50.000 CDF</div>
         </div>
     </header>
 
     <div class="container">
         <div class="winners-ticker-box">
             <div class="ticker-header">
-                <span>🏆 Kazananlar Akışı (Türkiye)</span>
+                <span>🏆 Flux des Gagnants (Kinshasa)</span>
             </div>
             <div class="ticker-list" id="tickerList"></div>
         </div>
 
-        <!-- AUTH STEP -->
         <div id="auth-screen" class="card">
-            <div style="font-size: 2rem; margin-bottom: 8px;">🇹🇷</div>
-            <h2>Güvenli Doğrulama</h2>
-            <p>Betandyou VIP sinyallerine erişmek için 4 haneli PIN kodunuzu girin.</p>
+            <div style="font-size: 2.5rem; margin-bottom: 12px;">🇨🇩</div>
+            <h2>Vérification Sécurisée</h2>
+            <p>Entrez votre code PIN à 4 chiffres pour accéder aux signaux VIP Betandyou RDC.</p>
             <input type="password" id="pin" class="pin-input" placeholder="••••" maxlength="4" oninput="playBeep(800, 0.03)">
-            <button class="main-btn" onclick="playBeep(400, 0.08); login();">Giriş Yap</button>
+            <button class="main-btn" onclick="playBeep(400, 0.08); login();">Se Connecter</button>
         </div>
 
-        <!-- DASHBOARD -->
         <div id="dashboard">
-            <div class="section-title">⚡ Bir Oyun ve AI Stratejisi Seçin</div>
+            <div class="section-title">⚡ Choisissez un jeu & Stratégie AI</div>
             <div class="games-grid">
                 <div class="game-card" onclick="playBeep(500, 0.05); openGame('Aviator')">
                     <div class="game-icon">✈️</div>
                     <div class="game-name">Aviator</div>
-                    <div class="game-status">Çarpan Analizi</div>
+                    <div class="game-status">Analyse Multiplicateur</div>
                 </div>
                 <div class="game-card" onclick="playBeep(500, 0.05); openGame('Apple Fortune')">
                     <div class="game-icon">🍎</div>
                     <div class="game-name">Apple Fortune</div>
-                    <div class="game-status">Güvenli Yol</div>
+                    <div class="game-status">Chemin Sûr</div>
                 </div>
                 <div class="game-card" onclick="playBeep(500, 0.05); openGame('Mines')">
                     <div class="game-icon">💣</div>
                     <div class="game-name">Mines 5x5</div>
-                    <div class="game-status">Mayın Haritası</div>
+                    <div class="game-status">Carte des Mines</div>
                 </div>
                 <div class="game-card" onclick="playBeep(500, 0.05); openGame('Penalty')">
                     <div class="game-icon">⚽</div>
                     <div class="game-name">Penalty</div>
-                    <div class="game-status">Tahmin Edilen Gol</div>
+                    <div class="game-status">But Prédit</div>
                 </div>
             </div>
         </div>
 
-        <!-- GAMEPLAY SCREEN -->
         <div id="gameplay">
             <div class="navigation-top">
-                <button class="back-btn" onclick="playBeep(350, 0.05); goHome();">← Oyun Menüsü</button>
-                <span id="currentGameLabel" style="font-weight: 800; color: var(--accent-gold); font-size: 0.85rem;">Aviator</span>
+                <button class="back-btn" onclick="playBeep(350, 0.05); goHome();">← Menu des Jeux</button>
+                <span id="currentGameLabel" style="font-weight: 800; color: var(--accent-gold); font-size: 1rem;">Aviator</span>
             </div>
 
             <div class="bonus-progress-box">
                 <div class="bonus-info">
-                    <span>🔥 VIP Sinyal Bonusu</span>
-                    <span id="progressText">Seviye 1 / 4</span>
+                    <span>🔥 Bonus Signal VIP</span>
+                    <span id="progressText">Niveau 1 / 4</span>
                 </div>
                 <div class="progress-track">
                     <div class="progress-fill" id="bonusProgressFill" style="width: 25%;"></div>
@@ -552,29 +559,28 @@
             <div class="game-screen-box">
                 <div class="scanning-overlay" id="scanningOverlay">
                     <div class="scanner-ring"></div>
-                    <div style="font-weight: 800; font-size: 0.75rem; color: var(--accent-gold); letter-spacing: 0.5px;">YAPAY ZEKA HESAPLANIYOR...</div>
+                    <div style="font-weight: 800; font-size: 0.8rem; color: var(--accent-gold); letter-spacing: 1px;">AI EN COURS DE CALCUL...</div>
                 </div>
                 <div id="game-content-area"></div>
-                <div class="sync-badge">⚡ AKTİF NÖRAL ALGORİTMA</div>
+                <div class="sync-badge">⚡ ALGORITHME NEURAL ACTIF</div>
             </div>
 
-            <button class="main-btn" id="actionBtn" onclick="playBeep(700, 0.05); triggerPrediction();">SİNYAL ÜRET</button>
+            <button class="main-btn" id="actionBtn" onclick="playBeep(700, 0.05); triggerPrediction();">GÉNÉRER UN SIGNAL</button>
         </div>
     </div>
 
-    <!-- TOASTS -->
     <div id="toast-container"></div>
 
-    <!-- MODAL -->
     <div id="modal-overlay">
         <div class="modal-content">
-            <div class="modal-title">⚠️ Senkronizasyon Sınırı</div>
+            <div class="modal-title">⚠️ Limite de Synchronisation</div>
             <div class="modal-text">
-                Deneme bakiyeniz tükendi. Sınırsız Betandyou VIP sinyallerinin kilidini açmak için kayıt olun veya hesabınıza para yatırın:
+                Votre solde d'essai est épuisé. Pour débloquer les signaux illimités de Betandyou RDC, inscrivez-vous ou déposez avec le code promo :
+                <div class="promo-highlight">ALP882</div>
             </div>
-            <a href="https://sp1nwin.com/rcyQnv" target="_blank" class="action-link">Betandyou'da Etkinleştir</a>
+            <a href="https://refpa69905.com/L?tag=d_5160092m_64375c_tim&site=5160092&ad=64375&r=registration?bonus=casino" target="_blank" class="action-link">Activer sur Betandyou</a>
             <br>
-            <button class="close-modal-btn" onclick="playBeep(300, 0.04); closeModal();">Kapat</button>
+            <button class="close-modal-btn" onclick="playBeep(300, 0.04); closeModal();">Fermer</button>
         </div>
     </div>
 
@@ -592,7 +598,7 @@
                 const gain = audioCtx.createGain();
                 osc.type = 'sine';
                 osc.frequency.value = frequency;
-                gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
+                gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
                 gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
                 osc.connect(gain);
                 gain.connect(audioCtx.destination);
@@ -602,13 +608,13 @@
         }
 
         let currentGame = '';
-        let currentBalance = 5000;
+        let currentBalance = 50000;
         let predictionClicks = 0;
 
         const winnerNames = [
-            "Ahmet Y.", "Mehmet K.", "Emre D.", "Zeynep S.", "Burak A.", 
-            "Can M.", "Elif T.", "Hakan Ç.", "Murat B.", "Sibel Ö.", 
-            "Kerem G.", "Ayşe Ş.", "Tolga V.", "Deniz N.", "Ozan K."
+            "Christian M.", "Tresor K.", "Junior N.", "Chantal B.", "Glody M.", 
+            "Gédéon T.", "Nadège L.", "Hervé K.", "Patrick D.", "Grâce M.", 
+            "Aristote K.", "Rachèle T.", "Fiston B.", "Dieumerci N.", "Exaucé S."
         ];
         const winnerGames = ["Aviator", "Mines 5x5", "Apple Fortune", "Penalty"];
         let winnersList = [];
@@ -616,12 +622,12 @@
         function generateRandomWinnerObj() {
             const name = winnerNames[Math.floor(Math.random() * winnerNames.length)];
             const game = winnerGames[Math.floor(Math.random() * winnerGames.length)];
-            const amount = ((Math.floor(Math.random() * 85) + 15) * 100).toLocaleString('tr-TR') + " ₺";
+            const amount = ((Math.floor(Math.random() * 85) + 15) * 1000).toLocaleString('fr-FR') + " CDF";
             return { name, game, amount };
         }
 
         function initWinners() {
-            for(let i=0; i<8; i++) {
+            for(let i=0; i<10; i++) {
                 winnersList.push(generateRandomWinnerObj());
             }
             renderWinners(false);
@@ -645,11 +651,11 @@
 
         function updateWinnersTicker() {
             winnersList.unshift(generateRandomWinnerObj());
-            if(winnersList.length > 8) winnersList.pop();
+            if(winnersList.length > 10) winnersList.pop();
             renderWinners(true);
         }
 
-        setInterval(updateWinnersTicker, 2200);
+        setInterval(updateWinnersTicker, 2000);
         window.onload = initWinners;
 
         function spawnToastNotification() {
@@ -661,14 +667,14 @@
             toast.innerHTML = `
                 <div class="toast-icon">🎉</div>
                 <div class="toast-text">
-                    <b>${w.name}</b> (${w.game})<br>şimdi <b>${w.amount}</b> kazandı!
+                    <b>${w.name}</b> (${w.game})<br>vient de gagner <b>${w.amount}</b> !
                 </div>
             `;
             container.appendChild(toast);
-            playBeep(880, 0.06);
-            setTimeout(() => { toast.remove(); }, 3500);
+            playBeep(880, 0.08);
+            setTimeout(() => { toast.remove(); }, 4000);
         }
-        setInterval(spawnToastNotification, 7500);
+        setInterval(spawnToastNotification, 7000);
 
         setInterval(() => {
             const el = document.getElementById('accuracyRate');
@@ -679,7 +685,7 @@
         }, 3500);
 
         function updateBalanceUI() {
-            document.getElementById('balanceDisplay').textContent = `₺ ${currentBalance.toLocaleString('tr-TR')}`;
+            document.getElementById('balanceDisplay').textContent = `💰 ${currentBalance.toLocaleString('fr-FR')} CDF`;
         }
 
         function login() {
@@ -688,7 +694,7 @@
                 document.getElementById('auth-screen').style.display = 'none';
                 document.getElementById('dashboard').style.display = 'block';
             } else {
-                alert('Yanlış PIN kodu! (Doğru kod: 1221)');
+                alert('Code PIN incorrect ! (Code correct: 1221)');
             }
         }
 
@@ -713,18 +719,18 @@
             const step = (predictionClicks % 4);
             const p = (step + 1) * 25;
             if(fill) fill.style.width = `${p}%`;
-            if(txt) txt.textContent = `Seviye ${step + 1} / 4`;
+            if(txt) txt.textContent = `Niveau ${step + 1} / 4`;
         }
 
         function renderGameInterface() {
             const area = document.getElementById('game-content-area');
             if (currentGame === 'Aviator') {
                 area.innerHTML = `
-                    <div style="font-size:0.7rem; color:var(--text-muted); font-weight:700;">✈️ ÖNERİLEN ÇARPAN</div>
+                    <div style="font-size:0.8rem; color:var(--text-muted); font-weight:700;">✈️ MULTIPLICATEUR RECOMMANDÉ</div>
                     <div class="aviator-val" id="aviatorVal">2.45x</div>
                 `;
             } else if (currentGame === 'Mines') {
-                let gridHtml = '<div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:8px; font-weight:700;">💎 GÜVENLİ HÜCRELER</div><div class="mines-grid">';
+                let gridHtml = '<div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:10px; font-weight:700;">💎 CELLULES SÛRES</div><div class="mines-grid">';
                 for(let i=0; i<25; i++) {
                     gridHtml += `<div class="mine-cell" id="mine-${i}">⬜</div>`;
                 }
@@ -732,7 +738,7 @@
                 area.innerHTML = gridHtml;
                 generateMines();
             } else if (currentGame === 'Apple Fortune') {
-                let appleHtml = '<div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:8px; font-weight:700;">🍎 GÜVENLİ SEVİYELER</div><div class="apple-rows">';
+                let appleHtml = '<div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:10px; font-weight:700;">🍎 NIVEAUX SÛRS</div><div class="apple-rows">';
                 for(let r=0; r<5; r++) {
                     appleHtml += '<div class="apple-row">';
                     for(let c=0; c<5; c++) {
@@ -745,7 +751,7 @@
                 generateApples();
             } else if (currentGame === 'Penalty') {
                 area.innerHTML = `
-                    <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:8px; font-weight:700;">⚽ YAPAY ZEKA ŞUT BÖLGESİ</div>
+                    <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:10px; font-weight:700;">⚽ ZONE DE TIR AI</div>
                     <div class="penalty-field">
                         <div class="goal-target" id="target" style="top: 25%; left: 38%;">🥅</div>
                     </div>
@@ -756,7 +762,7 @@
 
         function triggerPrediction() {
             if (currentBalance > 0) {
-                currentBalance -= 1000;
+                currentBalance -= 10000;
                 if (currentBalance < 0) currentBalance = 0;
                 updateBalanceUI();
             }
@@ -774,7 +780,7 @@
 
                 predictionClicks++;
                 updateProgressUI();
-                playBeep(1200, 0.08);
+                playBeep(1200, 0.1);
 
                 if (currentGame === 'Aviator') {
                     const multipliers = ['1.85x', '3.10x', '2.65x', '5.40x', '1.42x', '4.80x', '2.15x', '7.20x'];
@@ -791,7 +797,7 @@
                 } else if (currentGame === 'Penalty') {
                     generatePenalty();
                 }
-            }, 500);
+            }, 600);
         }
 
         function generateMines() {
@@ -830,11 +836,11 @@
 
         function generatePenalty() {
             const positions = [
-                {top: '15%', left: '18%'},
-                {top: '15%', left: '68%'},
-                {top: '52%', left: '22%'},
-                {top: '52%', left: '62%'},
-                {top: '32%', left: '40%'}
+                {top: '12%', left: '15%'},
+                {top: '12%', left: '72%'},
+                {top: '55%', left: '20%'},
+                {top: '55%', left: '68%'},
+                {top: '32%', left: '42%'}
             ];
             const pos = positions[Math.floor(Math.random() * positions.length)];
             const target = document.getElementById('target');
