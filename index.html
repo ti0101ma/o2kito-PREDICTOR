@@ -2,20 +2,19 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>BETANDYOU VIP Predictor - RDC</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-deep: #090514; /* Глубокий премиальный темно-фиолетовый / космический оттенок */
-            --bg-card: rgba(22, 14, 38, 0.75);
-            --bg-card-hover: rgba(35, 23, 58, 0.85);
-            --border-clr: rgba(212, 175, 55, 0.12);
-            --border-gold: rgba(212, 175, 55, 0.35);
-            --accent-green: #10b981;
-            --accent-gold: #d4af37; /* Настоящий благородный золотой цвет */
+            --bg-deep: #060913;
+            --bg-card: rgba(13, 20, 38, 0.85);
+            --bg-card-hover: rgba(22, 33, 61, 0.95);
+            --border-clr: rgba(234, 179, 8, 0.15);
+            --border-gold: rgba(234, 179, 8, 0.4);
+            --accent-gold: #f59e0b;
             --text-main: #ffffff;
-            --text-muted: #a19dbe;
+            --text-muted: #94a3b8;
             --danger: #ef4444;
         }
 
@@ -24,177 +23,160 @@
             margin: 0;
             padding: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        /* Настоящий премиальный многослойный фон с богатым золотисто-пурпурным сиянием */
-        body {
-            background-color: var(--bg-deep);
+        /* Полная гарантия изменения фона и видимости для мобильных устройств */
+        html, body {
+            background-color: #060913 !important;
             color: var(--text-main);
             min-height: 100vh;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             overflow-x: hidden;
             position: relative;
-            background-image: 
-                radial-gradient(circle at 10% 15%, rgba(212, 175, 55, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 85%, rgba(16, 185, 129, 0.1) 0%, transparent 45%),
-                radial-gradient(circle at 50% 50%, rgba(55, 30, 95, 0.45) 0%, transparent 75%),
-                linear-gradient(135deg, #090514 0%, #150a24 50%, #06030c 100%);
-            background-attachment: fixed;
         }
 
-        /* Роскошная сетка высокой четкости */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        body {
             background-image: 
-                linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
-            background-size: 45px 45px;
-            z-index: -1;
-            pointer-events: none;
+                radial-gradient(circle at 20% 15%, rgba(245, 158, 11, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 85%, rgba(30, 58, 138, 0.4) 0%, transparent 60%),
+                linear-gradient(135deg, #060913 0%, #0c1427 50%, #03050a 100%) !important;
+            background-attachment: fixed !important;
         }
 
         header {
             width: 100%;
-            background: rgba(9, 5, 20, 0.82);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 18px 32px;
+            background: rgba(6, 9, 19, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--border-gold);
             position: sticky;
             top: 0;
-            z-index: 50;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .vip-badge {
-            background: linear-gradient(135deg, #d4af37, #aa7c11);
+            background: linear-gradient(135deg, #f59e0b, #d97706);
             color: #000;
-            padding: 6px 12px;
-            border-radius: 8px;
+            padding: 5px 10px;
+            border-radius: 6px;
             font-weight: 800;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             letter-spacing: 1px;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
 
         .brand-name {
             font-weight: 900;
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             letter-spacing: 1px;
             color: var(--text-main);
             text-transform: uppercase;
         }
         .brand-name span {
             color: var(--accent-gold);
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
         }
 
         .header-right {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .ai-status-pill {
-            background: rgba(212, 175, 55, 0.08);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 8px 14px;
-            border-radius: 12px;
-            font-size: 0.8rem;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 6px 10px;
+            border-radius: 10px;
+            font-size: 0.75rem;
             font-weight: 700;
             color: var(--accent-gold);
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
         .pulse-dot {
-            width: 8px; height: 8px; background: var(--accent-gold); border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-gold);
+            width: 7px; height: 7px; background: var(--accent-gold); border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent-gold);
             animation: pulseAnim 1.5s infinite;
         }
         @keyframes pulseAnim {
             0% { transform: scale(0.95); opacity: 0.8; }
-            50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 15px var(--accent-gold); }
+            50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 12px var(--accent-gold); }
             100% { transform: scale(0.95); opacity: 0.8; }
         }
 
         .user-balance {
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.35);
-            padding: 10px 18px;
-            border-radius: 12px;
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            padding: 8px 14px;
+            border-radius: 10px;
             color: var(--accent-gold);
             font-weight: 800;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
             display: flex;
             align-items: center;
-            gap: 8px;
-        }
-        .user-balance:hover {
-            background: rgba(212, 175, 55, 0.2);
-            border-color: var(--accent-gold);
-            transform: translateY(-2px);
+            gap: 6px;
+            z-index: 1000;
+            position: relative;
         }
 
         .container {
             width: 100%;
             max-width: 600px;
-            padding: 30px 20px;
+            padding: 20px 15px;
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            z-index: 2;
         }
 
         .winners-ticker-box {
             background: var(--bg-card);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border: 1px solid var(--border-gold);
-            border-radius: 20px;
-            padding: 16px 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            border-radius: 16px;
+            padding: 14px;
+            margin-bottom: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
         }
 
         .ticker-header {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 800;
             color: var(--accent-gold);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
             border-bottom: 1px solid var(--border-clr);
-            padding-bottom: 8px;
+            padding-bottom: 6px;
         }
 
         .ticker-list {
             display: flex;
             flex-direction: column;
             gap: 6px;
-            max-height: 290px;
+            max-height: 240px;
             overflow: hidden;
         }
 
@@ -202,122 +184,96 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
-            padding: 5px 10px;
-            background: rgba(9, 5, 20, 0.5);
+            padding: 6px 10px;
+            background: rgba(6, 9, 19, 0.6);
             border-radius: 8px;
-            border: 1px solid rgba(212, 175, 55, 0.05);
-            transition: all 0.4s ease-in-out;
-        }
-
-        .winner-item.new-item {
-            animation: slideDown 0.4s ease-out forwards;
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-15px); }
-            to { opacity: 1; transform: translateY(0); }
+            border: 1px solid rgba(245, 158, 11, 0.05);
         }
 
         .winner-item span { color: var(--text-main); font-weight: 700; }
-        .winner-item b { color: var(--accent-gold); font-weight: 800; text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
+        .winner-item b { color: var(--accent-gold); font-weight: 800; }
 
         #toast-container {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 9999;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99999;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             pointer-events: none;
         }
         .toast-card {
-            background: rgba(22, 14, 38, 0.95);
-            backdrop-filter: blur(20px);
+            background: rgba(13, 20, 38, 0.98);
             border: 1px solid var(--accent-gold);
-            border-radius: 14px;
-            padding: 14px 20px;
-            box-shadow: 0 15px 40px rgba(212,175,55,0.3);
+            border-radius: 12px;
+            padding: 12px 16px;
+            box-shadow: 0 10px 30px rgba(245,158,11,0.3);
             display: flex;
             align-items: center;
-            gap: 14px;
-            animation: toastIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), toastOut 0.4s ease 3.6s forwards;
-            max-width: 320px;
+            gap: 12px;
+            max-width: 300px;
             pointer-events: auto;
         }
-        @keyframes toastIn {
-            from { opacity: 0; transform: translateY(40px) scale(0.85); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        @keyframes toastOut {
-            to { opacity: 0; transform: translateY(-10px) scale(0.95); pointer-events: none; }
-        }
-        .toast-icon { font-size: 1.5rem; }
-        .toast-text { font-size: 0.8rem; line-height: 1.4; color: var(--text-muted); }
+        .toast-icon { font-size: 1.3rem; }
+        .toast-text { font-size: 0.75rem; line-height: 1.3; color: var(--text-muted); }
         .toast-text b { color: var(--accent-gold); font-weight: 800; }
 
         .card {
             background: var(--bg-card);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-gold);
-            border-radius: 24px;
-            padding: 40px 30px;
+            border-radius: 20px;
+            padding: 30px 20px;
             text-align: center;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.75);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
             position: relative;
+            z-index: 5;
         }
 
-        .card h2 { font-size: 1.7rem; margin-bottom: 12px; font-weight: 800; }
-        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 30px; line-height: 1.6; }
+        .card h2 { font-size: 1.5rem; margin-bottom: 10px; font-weight: 800; }
+        .card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px; line-height: 1.5; }
 
         .pin-input {
             width: 100%;
-            background: rgba(9, 5, 20, 0.7);
+            background: rgba(6, 9, 19, 0.8);
             border: 2px solid var(--border-gold);
-            border-radius: 16px;
-            padding: 18px;
+            border-radius: 14px;
+            padding: 15px;
             color: #fff;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             text-align: center;
-            letter-spacing: 16px;
-            margin-bottom: 25px;
+            letter-spacing: 14px;
+            margin-bottom: 20px;
             outline: none;
-            transition: all 0.3s;
-        }
-        .pin-input:focus {
-            border-color: var(--accent-gold);
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
         }
 
         .main-btn {
             width: 100%;
-            background: linear-gradient(135deg, var(--accent-gold), #aa7c11);
+            background: linear-gradient(135deg, var(--accent-gold), #d97706);
             color: #000;
             font-weight: 900;
-            padding: 18px;
+            padding: 16px;
             border: none;
-            border-radius: 16px;
-            font-size: 1.1rem;
+            border-radius: 14px;
+            font-size: 1rem;
             cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.35);
             text-transform: uppercase;
             letter-spacing: 1px;
-        }
-        .main-btn:hover { 
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.55); 
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+            z-index: 10;
+            position: relative;
         }
 
-        #dashboard { display: none; width: 100%; }
+        #dashboard { display: none; width: 100%; z-index: 5; }
 
         .section-title {
             color: var(--accent-gold);
-            font-size: 0.85rem;
-            margin-bottom: 16px;
+            font-size: 0.8rem;
+            margin-bottom: 14px;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 800;
@@ -326,82 +282,81 @@
         .games-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
+            gap: 12px;
         }
 
         .game-card {
             background: var(--bg-card);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border: 1px solid var(--border-gold);
-            border-radius: 20px;
-            padding: 28px 16px;
+            border-radius: 16px;
+            padding: 22px 12px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-        }
-        .game-card:hover {
-            border-color: var(--accent-gold);
-            transform: translateY(-6px);
-            background: var(--bg-card-hover);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            z-index: 10;
+            position: relative;
         }
 
-        .game-icon { font-size: 3rem; margin-bottom: 14px; }
-        .game-name { font-weight: 800; font-size: 1.15rem; margin-bottom: 8px; color: #fff; }
+        .game-icon { font-size: 2.5rem; margin-bottom: 10px; }
+        .game-name { font-weight: 800; font-size: 1rem; margin-bottom: 6px; color: #fff; }
         
         .game-status { 
-            font-size: 0.75rem; 
+            font-size: 0.7rem; 
             color: var(--accent-gold); 
             font-weight: 700; 
-            background: rgba(212, 175, 55, 0.1); 
-            border: 1px solid rgba(212, 175, 55, 0.25);
-            padding: 5px 12px; 
-            border-radius: 30px; 
+            background: rgba(245, 158, 11, 0.1); 
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 4px 10px; 
+            border-radius: 20px; 
             display: inline-block; 
         }
 
-        #gameplay { display: none; width: 100%; }
+        #gameplay { display: none; width: 100%; z-index: 5; }
 
         .navigation-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            z-index: 10;
+            position: relative;
         }
 
         .back-btn {
             background: var(--bg-card);
             color: var(--text-main);
             border: 1px solid var(--border-gold);
-            padding: 10px 18px;
-            border-radius: 12px;
+            padding: 8px 14px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
+            z-index: 10;
+            position: relative;
         }
-        .back-btn:hover { background: var(--bg-card-hover); }
 
         .bonus-progress-box {
             background: var(--bg-card);
             border: 1px solid var(--border-gold);
-            border-radius: 14px;
-            padding: 10px 16px;
-            margin-bottom: 15px;
+            border-radius: 12px;
+            padding: 10px 14px;
+            margin-bottom: 12px;
         }
         .bonus-info {
             display: flex;
             justify-content: space-between;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 800;
             color: var(--accent-gold);
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             text-transform: uppercase;
         }
         .progress-track {
             width: 100%;
-            height: 6px;
-            background: rgba(9, 5, 20, 0.9);
+            height: 5px;
+            background: rgba(6, 9, 19, 0.9);
             border-radius: 3px;
             overflow: hidden;
         }
@@ -414,15 +369,15 @@
 
         .game-screen-box {
             background: var(--bg-card);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-gold);
-            border-radius: 24px;
-            padding: 35px 20px;
+            border-radius: 20px;
+            padding: 25px 15px;
             text-align: center;
-            margin-bottom: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.65);
-            min-height: 220px;
+            margin-bottom: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            min-height: 200px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -430,49 +385,49 @@
             position: relative;
         }
 
-        .aviator-val { font-size: 4.2rem; font-weight: 900; color: var(--accent-gold); margin: 15px 0; transition: opacity 0.2s; text-shadow: 0 0 20px rgba(212,175,55,0.4); }
+        .aviator-val { font-size: 3.5rem; font-weight: 900; color: var(--accent-gold); margin: 10px 0; text-shadow: 0 0 15px rgba(245,158,11,0.4); }
 
         .mines-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            max-width: 320px;
+            gap: 8px;
+            max-width: 280px;
             margin: 0 auto;
         }
         .mine-cell {
             aspect-ratio: 1;
-            background: rgba(9, 5, 20, 0.7);
+            background: rgba(6, 9, 19, 0.8);
             border: 1px solid var(--border-gold);
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
         }
         .mine-cell.safe {
-            background: rgba(212, 175, 55, 0.25);
+            background: rgba(245, 158, 11, 0.25);
             border-color: var(--accent-gold);
-            box-shadow: 0 0 15px rgba(212,175,55,0.3);
+            box-shadow: 0 0 10px rgba(245,158,11,0.3);
         }
 
         .apple-rows {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            max-width: 300px;
+            gap: 8px;
+            max-width: 260px;
             margin: 0 auto;
         }
-        .apple-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
-        .apple-cell { background: rgba(9, 5, 20, 0.7); border: 1px solid var(--border-gold); border-radius: 10px; padding: 12px 0; text-align: center; opacity: 0.35; }
-        .apple-cell.highlight { background: rgba(212, 175, 55, 0.3); border-color: var(--accent-gold); opacity: 1; box-shadow: 0 0 15px rgba(212,175,55,0.3); }
+        .apple-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+        .apple-cell { background: rgba(6, 9, 19, 0.8); border: 1px solid var(--border-gold); border-radius: 8px; padding: 10px 0; text-align: center; opacity: 0.35; }
+        .apple-cell.highlight { background: rgba(245, 158, 11, 0.3); border-color: var(--accent-gold); opacity: 1; box-shadow: 0 0 10px rgba(245,158,11,0.3); }
 
         .penalty-field {
-            background: linear-gradient(135deg, #090514, #1c1033);
+            background: linear-gradient(135deg, #060913, #16223d);
             border: 2px solid var(--border-gold);
-            border-radius: 16px;
-            height: 180px;
+            border-radius: 14px;
+            height: 160px;
             position: relative;
-            max-width: 340px;
+            max-width: 300px;
             width: 100%;
             margin: 0 auto;
             display: flex;
@@ -480,50 +435,51 @@
             justify-content: center;
         }
         .goal-target {
-            width: 55px; height: 55px; border: 2px dashed rgba(212,175,55,0.9); border-radius: 50%;
-            position: absolute; display: flex; align-items: center; justify-content: center; font-size: 1.6rem;
-            background: rgba(212, 175, 55, 0.2);
-            box-shadow: 0 0 15px rgba(212,175,55,0.3);
-            transition: all 0.3s ease;
+            width: 48px; height: 48px; border: 2px dashed rgba(245,158,11,0.9); border-radius: 50%;
+            position: absolute; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+            background: rgba(245, 158, 11, 0.2);
+            box-shadow: 0 0 10px rgba(245,158,11,0.3);
         }
 
         .sync-badge {
-            background: rgba(212, 175, 55, 0.1); color: var(--accent-gold); border: 1px solid rgba(212, 175, 55, 0.35);
-            padding: 8px 16px; border-radius: 30px; font-size: 0.75rem; font-weight: 800; display: inline-block; margin-top: 20px;
+            background: rgba(245, 158, 11, 0.1); color: var(--accent-gold); border: 1px solid rgba(245, 158, 11, 0.35);
+            padding: 6px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; display: inline-block; margin-top: 15px;
         }
 
         .scanning-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(9, 5, 20, 0.9); backdrop-filter: blur(10px);
+            background: rgba(6, 9, 19, 0.92); backdrop-filter: blur(8px);
             display: none; flex-direction: column; align-items: center; justify-content: center;
-            border-radius: 24px; z-index: 10;
+            border-radius: 20px; z-index: 20;
         }
         .scanner-ring {
-            width: 50px; height: 50px; border: 3px solid rgba(212,175,55,0.2); border-top-color: var(--accent-gold);
-            border-radius: 50%; animation: spinRing 0.8s linear infinite; margin-bottom: 12px;
+            width: 45px; height: 45px; border: 3px solid rgba(245,158,11,0.2); border-top-color: var(--accent-gold);
+            border-radius: 50%; animation: spinRing 0.8s linear infinite; margin-bottom: 10px;
         }
         @keyframes spinRing { to { transform: rotate(360deg); } }
 
         #modal-overlay {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(9, 5, 20, 0.88); backdrop-filter: blur(20px);
-            justify-content: center; align-items: center; z-index: 10000; padding: 20px;
+            background: rgba(6, 9, 19, 0.9); backdrop-filter: blur(15px);
+            justify-content: center; align-items: center; z-index: 999999; padding: 20px;
         }
         .modal-content {
-            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 24px; padding: 40px 30px; max-width: 400px; width: 100%; text-align: center;
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 20px; padding: 30px 20px; max-width: 360px; width: 100%; text-align: center;
         }
-        .modal-title { color: var(--danger); font-size: 1.35rem; font-weight: 900; margin-bottom: 12px; }
-        .modal-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 25px; }
+        .modal-title { color: var(--danger); font-size: 1.25rem; font-weight: 900; margin-bottom: 10px; }
+        .modal-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 20px; }
         .promo-highlight {
-            background: rgba(212, 175, 55, 0.15); border: 1px dashed var(--accent-gold); color: var(--accent-gold);
-            padding: 8px; border-radius: 8px; font-weight: 800; margin: 10px 0; font-size: 1.1rem; letter-spacing: 1px;
+            background: rgba(245, 158, 11, 0.15); border: 1px dashed var(--accent-gold); color: var(--accent-gold);
+            padding: 6px; border-radius: 6px; font-weight: 800; margin: 8px 0; font-size: 1rem; letter-spacing: 1px;
         }
         .action-link {
-            background: linear-gradient(135deg, var(--accent-gold), #aa7c11); color: #000; text-decoration: none; font-weight: 900;
-            padding: 16px; border-radius: 14px; display: block; font-size: 1rem; text-transform: uppercase; margin-top: 15px;
-            box-shadow: 0 10px 25px rgba(212,175,55,0.3);
+            background: linear-gradient(135deg, var(--accent-gold), #d97706); color: #000; text-decoration: none; font-weight: 900;
+            padding: 14px; border-radius: 12px; display: block; font-size: 0.95rem; text-transform: uppercase; margin-top: 12px;
+            box-shadow: 0 8px 20px rgba(245,158,11,0.3);
+            z-index: 10;
+            position: relative;
         }
-        .close-modal-btn { background: none; border: none; color: var(--text-muted); margin-top: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 700; }
+        .close-modal-btn { background: none; border: none; color: var(--text-muted); margin-top: 15px; cursor: pointer; font-size: 0.8rem; font-weight: 700; }
     </style>
 </head>
 <body>
@@ -551,7 +507,7 @@
         </div>
 
         <div id="auth-screen" class="card">
-            <div style="font-size: 2.8rem; margin-bottom: 15px;">🇨🇩</div>
+            <div style="font-size: 2.5rem; margin-bottom: 12px;">🇨🇩</div>
             <h2>Vérification Sécurisée</h2>
             <p>Entrez votre code PIN à 4 chiffres pour accéder aux signaux VIP Betandyou RDC.</p>
             <input type="password" id="pin" class="pin-input" placeholder="••••" maxlength="4" oninput="playBeep(800, 0.03)">
@@ -587,7 +543,7 @@
         <div id="gameplay">
             <div class="navigation-top">
                 <button class="back-btn" onclick="playBeep(350, 0.05); goHome();">← Menu des Jeux</button>
-                <span id="currentGameLabel" style="font-weight: 800; color: var(--accent-gold); font-size: 1.1rem;">Aviator</span>
+                <span id="currentGameLabel" style="font-weight: 800; color: var(--accent-gold); font-size: 1rem;">Aviator</span>
             </div>
 
             <div class="bonus-progress-box">
@@ -603,7 +559,7 @@
             <div class="game-screen-box">
                 <div class="scanning-overlay" id="scanningOverlay">
                     <div class="scanner-ring"></div>
-                    <div style="font-weight: 800; font-size: 0.85rem; color: var(--accent-gold); letter-spacing: 1px;">AI EN COURS DE CALCUL...</div>
+                    <div style="font-weight: 800; font-size: 0.8rem; color: var(--accent-gold); letter-spacing: 1px;">AI EN COURS DE CALCUL...</div>
                 </div>
                 <div id="game-content-area"></div>
                 <div class="sync-badge">⚡ ALGORITHME NEURAL ACTIF</div>
@@ -770,11 +726,11 @@
             const area = document.getElementById('game-content-area');
             if (currentGame === 'Aviator') {
                 area.innerHTML = `
-                    <div style="font-size:0.85rem; color:var(--text-muted); font-weight:700;">✈️ MULTIPLICATEUR RECOMMANDÉ</div>
+                    <div style="font-size:0.8rem; color:var(--text-muted); font-weight:700;">✈️ MULTIPLICATEUR RECOMMANDÉ</div>
                     <div class="aviator-val" id="aviatorVal">2.45x</div>
                 `;
             } else if (currentGame === 'Mines') {
-                let gridHtml = '<div style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px; font-weight:700;">💎 CELLULES SÛRES</div><div class="mines-grid">';
+                let gridHtml = '<div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:10px; font-weight:700;">💎 CELLULES SÛRES</div><div class="mines-grid">';
                 for(let i=0; i<25; i++) {
                     gridHtml += `<div class="mine-cell" id="mine-${i}">⬜</div>`;
                 }
@@ -782,7 +738,7 @@
                 area.innerHTML = gridHtml;
                 generateMines();
             } else if (currentGame === 'Apple Fortune') {
-                let appleHtml = '<div style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px; font-weight:700;">🍎 NIVEAUX SÛRS</div><div class="apple-rows">';
+                let appleHtml = '<div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:10px; font-weight:700;">🍎 NIVEAUX SÛRS</div><div class="apple-rows">';
                 for(let r=0; r<5; r++) {
                     appleHtml += '<div class="apple-row">';
                     for(let c=0; c<5; c++) {
@@ -795,7 +751,7 @@
                 generateApples();
             } else if (currentGame === 'Penalty') {
                 area.innerHTML = `
-                    <div style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px; font-weight:700;">⚽ ZONE DE TIR AI</div>
+                    <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:10px; font-weight:700;">⚽ ZONE DE TIR AI</div>
                     <div class="penalty-field">
                         <div class="goal-target" id="target" style="top: 25%; left: 38%;">🥅</div>
                     </div>
